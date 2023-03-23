@@ -1,0 +1,42 @@
+
+body{font-family: "Lato",sans-serif;font-weight: 400;
+font-size: 1.6rem;line-height:1.6;
+color: #777;padding: 3rem;position: relative;}
+
+.heading-primary{color:$coloe-white;text-transform: uppercase;backface-visibility: hidden;
+  margin-bottom: 6rem;
+  &-sub{display: block;font-size: 2rem;font-weight: 700;
+  letter-spacing: 1.7rem;animation:left 3s ease-out;}
+  
+  &-main{display: block;
+  font-size: 6.2rem;font-weight: 400;letter-spacing: 3.5rem;
+  animation: right 3s ease-out;}
+
+  }
+
+.heading-secondary{font-size: 3.5rem;text-transform: uppercase;
+font-weight: 700;
+background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+display: inline-block;
+-webkit-background-clip:text;
+color: transparent;
+letter-spacing: .2rem;
+transition: all .2s ;text-align: center;
+
+&:hover{transform:translateY(1px);
+  background-image: linear-gradient(to right,$color-primary-dark,$color-primary-light,);
+
+text-shadow: .5rem 1rem 2rem rgba($color-black,.2);
+}
+}
+.heading-tertiary{text-transform: uppercase;margin-bottom: .5rem;}
+
+.paragraph{font-size:1.6rem;line-height: 1.8;
+margin-bottom: 1.5rem;}
+
+
+
+
+
+  
+
