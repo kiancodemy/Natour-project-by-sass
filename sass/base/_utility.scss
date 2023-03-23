@@ -1,4 +1,21 @@
-.u-center{text-align:center;}
-.u-margin{margin-bottom: 8rem;}
-.u-margin-sm{margin-bottom: 1.5rem;}
-.u-margin-md{margin-bottom: 4rem;}
+.u-center {
+  text-align: center;
+}
+.u-margin {
+  margin-bottom: 8rem;
+  @include respond-phone(tab-port) {
+    margin-bottom: 6rem;
+  }
+}
+.u-margin-sm {
+  margin-bottom: 1.5rem;
+  @include respond-phone(tab-port) {
+    margin-bottom: 1rem;
+  }
+}
+.u-margin-md {
+  margin-bottom: 4rem;
+  @include respond-phone(tab-port) {
+    margin-bottom: 3rem;
+  }
+}

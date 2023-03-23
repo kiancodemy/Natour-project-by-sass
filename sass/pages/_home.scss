@@ -1,43 +1,80 @@
+.section-about {
+  background-color: $color-light-gray;
+  padding: 10rem 8rem;
+  margin-top: -15vh;
+}
 
-.section-about{background-color: $color-light-gray;
-padding:10rem 8rem ;margin-top: -15vh}
-
-.section-feature{padding: 20rem  0;background-image:linear-gradient(to right bottom,  rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)), url('../img/hero.jpg');
-  background-size: cover;clip-path: polygon(100% 0, 100% 0, 100% 30%, 100% 85%, 0 100%, 0 100%, 0% 70%, 0 15%);
+.section-feature {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero.jpg");
+  background-size: cover;
+  clip-path: polygon(
+    100% 0,
+    100% 0,
+    100% 30%,
+    100% 85%,
+    0 100%,
+    0 100%,
+    0% 70%,
+    0 15%
+  );
   margin-top: -1rem;
-&-com{padding:0 8rem;
-&>*:hover{transform: translateY(-1.5rem) scale(1.03) skewY(2deg)}}
 
-
-
+  &-com {
+    padding: 0 8rem;
+    & > *:hover {
+      transform: translateY(-1.5rem) scale(1.03) skewY(2deg);
+    }
+  }
 }
 
-.section-tours{padding: 20rem 0 10rem 0 ;background-color: $color-grey-light;}
-  
-.section-stories{
-padding: 15rem 0;
-position: relative;
-}
-.section-book{padding: 10rem;
-background-image: linear-gradient(to right bottom , $color-primary-light , $color-primary-dark );
-}
-.book{
-
-background-image:linear-gradient(105deg,rgba(#fff,.9)0,rgba(#fff,.9)50%,transparent 50%), url(../img/nat-10.jpg);
-width:100%;
-
-
-
-
-
-background-size: 100%;
-
-border-radius: 5px;
-box-shadow: 0 1.5rem 4rem rgba($color-black,.2);
-&-form{width:50%;
-padding:3rem;
+.section-tours {
+  padding: 20rem 0 10rem 0;
+  background-color: $color-grey-light;
+  @include respond-phone(tab-port) {
+    padding: 15rem 0 5rem 0;
+  }
 }
 
+.section-stories {
+  padding: 15rem 0;
+  position: relative;
+  @include respond-phone(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
+}
+.section-book {
+  padding: 10rem;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  @include respond-phone(tab-port) {
+    padding: 5rem;
+  }
+}
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba(#fff, 0.9) 0,
+      rgba(#fff, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  width: 100%;
 
+  background-size: 100%;
 
+  border-radius: 5px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  &-form {
+    width: 50%;
+    padding: 3rem;
+  }
 }

@@ -1,14 +1,33 @@
+.header {
+  height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/hero.jpg");
 
-
-
-.header{height: 85vh;background-image:linear-gradient(to right bottom,  rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)), url('../img/hero.jpg');
-
-  background-size: cover;clip-path: polygon(0 0 ,100% 0 ,100% 85%,0 100%);
+  background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   position: relative;
-  
-  
-  &-logo-box{position: absolute;top: 4rem;left: 4rem;padding: 2rem;}
-  &-logo{height: 3.5rem;};
-  &-text-box{position: absolute;top: 40%;left: 50%;transform: translate(-50%,-50%);
-  text-align: center;}}
-  
+  @include respond-phone(tab-port) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  &-logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    padding: 2rem;
+  }
+  &-logo {
+    height: 3.5rem;
+  }
+  &-text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

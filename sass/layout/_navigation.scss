@@ -1,71 +1,86 @@
 .navigation {
-
   &-back {
-    width:6rem;
-    height:6rem;
-    border-radius:50%;
-    position:fixed;
-    top:6.5rem;
-    right:6.5rem;
-    background-image:radial-gradient($color-primary-light , $color-primary-dark);
-    z-index:100;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    z-index: 100;
     /*transform: scale(50);*/
-    transition: all .8s cubic-bezier(0,1.01,.39,1);
+    transition: all 0.8s cubic-bezier(0, 1.01, 0.39, 1);
 
+    @include respond-phone(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond-phone(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
-  &-checkbox { display: none;}
- 
-
+  &-checkbox {
+    display: none;
+  }
 
   &-btn {
     position: fixed;
-    background-color:$coloe-white;
-    width:7rem;
-    height:7rem;
-    top:6rem;
-    right:6rem;
+    background-color: $coloe-white;
+    width: 7rem;
+    height: 7rem;
+    top: 6rem;
+    right: 6rem;
     border-radius: 50%;
     z-index: 1900;
     text-transform: uppercase;
-    box-shadow: 0 1rem 3rem rgba($color-black,.15);
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.15);
     cursor: pointer;
     text-align: center;
 
-
+    @include respond-phone(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
   }
 
   &-icon {
     margin-top: 3.5rem;
     position: relative;
-    &,&::after,&::before {
+    &,
+    &::after,
+    &::before {
       width: 3.5rem;
       height: 2px;
       background-color: $coloe-grey-drak;
       display: inline-block;
     }
 
-    &::after,&::before{
-      content:"";
+    &::after,
+    &::before {
+      content: "";
       position: absolute;
       right: 0;
-      transition: all .4s ease-out;
-    
-      
+      transition: all 0.4s ease-out;
     }
-    &::after{top: -.8rem;}
-    &::before{top: .8rem;}
-
-
-
-
+    &::after {
+      top: -0.8rem;
+    }
+    &::before {
+      top: 0.8rem;
+    }
   }
-  
-  &-btn:hover  &-icon::after{
+
+  &-btn:hover &-icon::after {
     top: -1rem;
   }
-  
-  &-btn:hover  &-icon::before{
+
+  &-btn:hover &-icon::before {
     top: 1rem;
   }
 
@@ -73,102 +88,79 @@
     background-color: transparent;
   }
 
-  
   &-checkbox:checked ~ &-btn &-icon::after {
-    top:0;
+    top: 0;
     transform: rotate(135deg);
   }
-  
+
   &-checkbox:checked ~ &-btn &-icon::before {
     top: 0;
-    
+
     transform: rotate(-135deg);
   }
-
- 
-
 
   &-nav {
     height: 100vh;
     width: 0%;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     z-index: 1500;
     opacity: 0;
-    transition: all .8s;
+    transition: all 0.8s;
   }
 
   &-list {
     position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
-
-
   }
 
   &-item {
     margin: 1rem;
-   
-    
-
   }
 
-
-  &-link{
-  &:link,&:visited{
+  &-link {
+    &:link,
+    &:visited {
       display: inline-block;
-      
+
       padding: 1rem 2rem;
       text-transform: uppercase;
       color: #fff;
       font-size: 3rem;
       text-decoration: none;
       font-weight: 300;
-      background-image: linear-gradient(120deg,transparent 0%,transparent 50%,
-      $coloe-white 50%);
-      background-size: 220%;transition: all 1s;
-      border-radius: .8rem;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $coloe-white 50%
+      );
+      background-size: 220%;
+      transition: all 1s;
+      border-radius: 0.8rem;
 
-      span{margin-right: 1rem ;display: inline-block ;}
+      span {
+        margin-right: 1rem;
+        display: inline-block;
+      }
     }
-    &:hover,&:active{
-
+    &:hover,
+    &:active {
       background-position: 100%;
-      color:$color-primary;
+      color: $color-primary;
       transform: translateX(1rem);
     }
-
-
-
-
-
-
-    
-
-   
-
   }
-  &-checkbox:checked ~ &-back{
+  &-checkbox:checked ~ &-back {
     transform: scale(80);
   }
-  &-checkbox:checked ~ &-nav{
+  &-checkbox:checked ~ &-nav {
     width: 100%;
     opacity: 1;
   }
-  
-  
-  
-  
-  
 }
-
-
-
-
-
-
-

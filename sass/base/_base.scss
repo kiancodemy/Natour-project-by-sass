@@ -1,4 +1,3 @@
-
 /*space (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 FONT SIZE  (px)
@@ -6,5 +5,33 @@ FONT SIZE  (px)
 
 */
 
-html{font-size: 62.5%;};
-*,*::after,*::before{margin: 0;padding: 0;box-sizing: border-box;}
+html {
+  font-size: 62.5%;
+  @include respond-phone(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond-phone(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond-phone(big-desktop) {
+    font-size: 75%;
+  }
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+
+  @include respond-phone(tab-port) {
+    padding: 0;
+  }
+}
